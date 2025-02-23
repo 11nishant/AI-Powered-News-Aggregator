@@ -99,7 +99,107 @@ news-conspiracy-detection/
    ```
    Frontend will be available at `http://localhost:3000/`
 
+---  
+
+
+## ⚙️ How the Application Works
+
+### **1️⃣ User Inputs a Headline (Frontend)**
+📌 The user enters a news headline in an input form on the frontend.  
+📌 **Code Used:**  
+- `src/components/InputForm.js` → Handles user input & form submission.  
+- `src/services/api.js` → Sends the headline to the backend.  
+
+```js
+const response = await axios.post(`${BASE_URL}/predict`, { headline });
+```
+
 ---
+
+### **2️⃣ Headline Sent to Backend API (Flask)**
+📌 The backend receives the headline and passes it to the AI model for analysis.  
+📌 **Code Used:**  
+- `routes/predict.py` → Defines the `/predict` API endpoint.  
+- `models/text_classifier.py` → ML model calculates the conspiracy score.  
+
+```python
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json
+    headline = data.get('headline')
+    score = text_classifier.get_conspiracy_score(headline)
+    return jsonify({'score': score})
+```
+
+---
+
+### **3️⃣ AI Model Analyzes the Headline (ML Processing)**
+📌 The AI model runs NLP-based analysis to predict the **Conspiracy Score (0-1)**.  
+📌 **Code Used:**  
+- `models/text_classifier.py` → Loads pre-trained NLP model.  
+
+```python
+def get_conspiracy_score(headline):
+    processed_text = preprocess_text(headline)
+    prediction = model.predict([processed_text])
+    return float(prediction[0])
+```
+
+---
+
+### **4️⃣ Backend Returns Conspiracy Score**
+📌 The Flask API sends the conspiracy score back to the React frontend.  
+📌 **Code Used:**  
+- `routes/predict.py` (returns the result as JSON).  
+
+```python
+return jsonify({'score': score})
+```
+
+---
+
+### **5️⃣ Frontend Displays the Conspiracy Score**
+📌 The frontend receives the score and updates the UI.  
+📌 **Code Used:**  
+- `src/components/ScoreDisplay.js` → Displays the score visually.  
+
+```js
+<p>Conspiracy Score: {score}</p>
+```
+
+---
+
+### **6️⃣ Save the Headline & Score in Database**
+📌 Store the analyzed headline in the database.  
+📌 **Code Used:**  
+- `routes/news_crud.py` → Handles saving news to PostgreSQL.  
+
+```python
+@app.route('/news', methods=['POST'])
+def save_news():
+    data = request.json
+    headline = data.get('headline')
+    score = data.get('score')
+    db.insert_news(headline, score)
+    return jsonify({'message': 'News saved successfully'})
+```
+
+---
+
+### **7️⃣ User Views All Stored News**
+📌 Users can view previously analyzed headlines in a list.  
+📌 **Code Used:**  
+- `routes/news_crud.py` → Fetches stored news from PostgreSQL.  
+- `src/components/NewsList.js` → Displays the stored news.  
+
+```js
+const response = await axios.get(`${BASE_URL}/news`);
+setNewsList(response.data);
+```
+
+---
+
+
 
 ## API Endpoints
 
@@ -196,7 +296,8 @@ news-conspiracy-detection/
     <img src="image.png" alt="Watch the Demo" width="500">
 </a>  
 
-Click the image above to watch the full demo! 🚀  
+
+
 
 
 
