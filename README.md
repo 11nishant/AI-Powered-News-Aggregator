@@ -12,6 +12,10 @@ The frontend provides:
 - Display of conspiracy scores and stored news articles.
 - An admin panel for CRUD operations on stored news articles.
 
+## Machine Learning Model Used
+The project employs a **TF-IDF based Logistic Regression Model** for text classification. This model is trained to detect suspicious words, clickbait, and misinformation in news headlines. Additional enhancements can include transformer-based models like BERT for improved accuracy.
+
+
 ---
 
 ## Project Structure
@@ -166,19 +170,26 @@ news-conspiracy-detection/
 
 ---
 
+
+## Features
+- **Interactive Input Widget**: Users can enter any headline and receive a Conspiracy Score (0-100%).
+- **Existing Dataset Processing**: Displays and manages preloaded news headlines.
+- **Custom NLP Model**: Detects misinformation dynamically.
+- **CRUD Operations**: Users can delete news headlines.
+- **Optional Enhancements**: Highlights suspicious words and performs sentiment analysis.
+
+## Tech Stack
+- **Frontend**: React.js
+- **Backend**: Flask (Python)
+- **Database**: PostgreSQL
+- **NLP Tools**: NLTK, Scikit-learn
+
+
 ## Future Improvements
-- Enhance ML model accuracy with more data.
-- Implement user authentication.
-- Deploy the project to a cloud server.
+- Improve model accuracy using transformer models (BERT, RoBERTa).
+- Implement a real-time news feed integration.
+- Enhance UI with visualization of conspiracy trends.
 
----
 
-## Contributors
-- **Vismay Walde** - *Developer & Maintainer*
-
----
-
-## License
-This project is licensed under the MIT License.
 
 
