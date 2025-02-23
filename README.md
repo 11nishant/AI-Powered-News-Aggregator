@@ -193,7 +193,7 @@ news-conspiracy-detection/
 
   ## 🎥 Demo Video  
 
-[![Watch the Demo](assets/demo-thumbnail.png)](https://drive.google.com/file/d/1v0EfzFkYodFFd7GAqwWMKdf4KKj2QKvx/view?usp=drive_link)  
+[![Watch the Demo](image.png)](https://drive.google.com/file/d/1v0EfzFkYodFFd7GAqwWMKdf4KKj2QKvx/view?usp=drive_link)  
 
 Click the image above to watch the full demo! 🚀  
 
