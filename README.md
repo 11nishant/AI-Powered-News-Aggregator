@@ -13,7 +13,7 @@ The frontend provides:
 - An admin panel for CRUD operations on stored news articles.
 
 ## Machine Learning Model Used
-The project employs a **TF-IDF based Logistic Regression Model** for text classification. This model is trained to detect suspicious words, clickbait, and misinformation in news headlines. Additional enhancements can include transformer-based models like BERT for improved accuracy.
+The project employs a **TF-IDF Vectorizer with an SVM classifier for the Conspiracy Score and Logistic Regression Model** for text classification. This model is trained to detect suspicious words, clickbait, and misinformation in news headlines. Additional enhancements can include transformer-based models like BERT for improved accuracy.
 
 
 ---
