@@ -190,10 +190,11 @@ news-conspiracy-detection/
 - Implement a real-time news feed integration.
 - Enhance UI with visualization of conspiracy trends.
 
+## 🎥 Demo Video  
 
-  ## 🎥 Demo Video  
-
-[![Watch the Demo](image.png)](https://drive.google.com/file/d/1v0EfzFkYodFFd7GAqwWMKdf4KKj2QKvx/view?usp=drive_link)  
+<a href="https://drive.google.com/file/d/1v0EfzFkYodFFd7GAqwWMKdf4KKj2QKvx/view?usp=drive_link">
+    <img src="image.png" alt="Watch the Demo" width="500">
+</a>  
 
 Click the image above to watch the full demo! 🚀  
 
