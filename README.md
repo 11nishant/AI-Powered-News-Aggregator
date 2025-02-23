@@ -134,7 +134,7 @@ def predict():
 ---
 
 ### **3️⃣ AI Model Analyzes the Headline (ML Processing)**
-📌 The AI model runs NLP-based analysis to predict the **Conspiracy Score (0-1)**.  
+📌 The AI model runs NLP-based analysis to predict the **Conspiracy Score (0-100)**.  
 📌 **Code Used:**  
 - `models/text_classifier.py` → Loads pre-trained NLP model.  
 
