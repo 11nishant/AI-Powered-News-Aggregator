@@ -3,7 +3,7 @@
 ## Overview
 The AI-Powered News Aggregator is a web-based application that analyzes news headlines and assigns a Conspiracy Score (0-100%) using ML models. The system helps detect clickbait, misinformation, and neutral news dynamically, empowering users to evaluate the credibility of headlines. It consists of a **Flask** backend and a **React.js** frontend.
 
-The backend is responsible for:
+The backend is responsible for    :
 - Handling API requests for conspiracy score prediction.
 - Managing a PostgreSQL database to store news headlines and their associated scores.
 
